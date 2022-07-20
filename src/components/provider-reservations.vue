@@ -1,20 +1,29 @@
 <template>
   <div v-if="!reservations.length">
-  <br><br>
+    <br><br>
     <h2><b>There are no reservations..</b></h2>
   </div>
   <div v-else>
     <div>
-      <div class="row">
-        <div class="leftcolumn">
-          <div v-for="reservation in reservations" :key="reservation.id" class="card">
-            <h2>{{ reservation.start_date }} - {{ reservation.end_date }}</h2>
-            <h5>Status: Pending</h5>
-            <h5>Total Price: {{ reservation.total_price }}</h5>
-            <button @click="cancel(reservation._id)">Cancel Reservation</button>
-          </div>
-        </div>
-      </div>
+      <h2>Upcoming Reservations</h2>
+      <br />
+
+      <table>
+        <tr>
+          <th>Reservation ID</th>
+          <th>Date</th>
+          <th>Price</th>
+          <th></th>
+        </tr>
+        <tr v-for="reservation in reservations" :key="reservation.id">
+          <td>{{ reservation._id }}</td>
+          <td>{{ reservation.start_date }}</td>
+          <td>{{ reservation.total_price }}</td>
+          <td>
+            <button class="deletebtn" @click="cancel(reservation._id)">Cancel Reservation</button>
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
 </template>
@@ -65,42 +74,36 @@ export default {
 </script>
 
 <style scoped>
-* {
-  box-sizing: border-box;
+table {
+  border-collapse: collapse;
+  width: 100%;
+  padding-left: 20%;
+  float: center;
 }
 
-body {
-  font-family: Arial;
-  padding: 10px;
-  background: #f1f1f1;
+th,
+td {
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
-button {
-  background-color: #4d4c7d;
+.deletebtn {
+  background-color: darkred;
   color: white;
   padding: 16px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 30%;
+  width: 70%;
   opacity: 0.9;
+  height: 30%;
 }
 
-button:hover {
+.deletebtn:hover {
   opacity: 1;
 }
 
-.card {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
+div {
+  padding: 5%;
 }
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
 </style>
