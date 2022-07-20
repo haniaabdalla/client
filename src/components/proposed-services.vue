@@ -38,7 +38,7 @@ export default {
   methods: {
     getServices() {
       axios
-        .post("https://resservo.herokuapp.com/services/proposed_services", {
+        .post("https://reservo-r.herokuapp.com/services/proposed_services", {
           user_id: localStorage.getItem("user-info")
         })
         .then(response => {
@@ -50,7 +50,7 @@ export default {
     },
     accept(id) {
       axios
-        .put("https://resservo.herokuapp.com/services/proposed_services", {
+        .put("https://reservo-r.herokuapp.com/services/proposed_services", {
           id: id
         });
       window.alert("Service accepted.");

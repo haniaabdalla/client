@@ -108,7 +108,7 @@ export default {
             .getDownloadURL()
             .then(url => {
               console.log("image url ", url);
-              axios.post("https://resservo.herokuapp.com/services/propose_service", {
+              axios.post("https://reservo-r.herokuapp.com/services/propose_service", {
                 name: this.form.name,
                 image: url,
                 description: this.form.description,
@@ -125,7 +125,7 @@ export default {
     },
     getCategories() {
       axios
-        .get("https://resservo.herokuapp.com/categories")
+        .get("https://reservo-r.herokuapp.com/categories")
         .then(response => {
           this.categories = response.data;
         })

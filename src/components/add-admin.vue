@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     async register() {
-      axios.post("https://resservo.herokuapp.com/user/register", {
+      axios.post("https://reservo-r.herokuapp.com/user/register", {
         email: this.form.email,
         password: this.form.pswd,
         name: this.form.name,

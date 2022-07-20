@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     submit() {
-      axios.post("https://resservo.herokuapp.com/hours/add_hours", {
+      axios.post("https://reservo-r.herokuapp.com/hours/add_hours", {
         day: this.day,
         from: this.from,
         to: this.to,

@@ -71,7 +71,7 @@ export default {
   methods: {
     search1() {
       axios
-        .post("https://resservo.herokuapp.com/services/search", {
+        .post("https://reservo-r.herokuapp.com/services/search", {
           serviceName: this.search
         })
         .then(response => {
@@ -86,7 +86,7 @@ export default {
     },
     addfav(id) {
       console.log(id);
-      let favservice = axios.post("https://resservo.herokuapp.com/fav/add_favorite", {
+      let favservice = axios.post("https://reservo-r.herokuapp.com/fav/add_favorite", {
         service_id: id,
         user_id: localStorage.getItem("user-info")
       });
@@ -96,7 +96,7 @@ export default {
     },
     getServices() {
       axios
-        .get("https://resservo.herokuapp.com/services")
+        .get("https://reservo-r.herokuapp.com/services")
         .then(response => {
           this.services = response.data;
         })
@@ -106,7 +106,7 @@ export default {
     },
     getByCategory(name) {
       axios
-        .post("https://resservo.herokuapp.com/services/find_by_category", {
+        .post("https://reservo-r.herokuapp.com/services/find_by_category", {
           name: name
         })
         .then(response => {
@@ -119,7 +119,7 @@ export default {
     },
     getCategories() {
       axios
-        .get("https://resservo.herokuapp.com/categories")
+        .get("https://reservo-r.herokuapp.com/categories")
         .then(response => {
           this.categories = response.data;
         })
@@ -134,7 +134,7 @@ export default {
       } else {
         console.log("hania");
         axios
-          .post("https://resservo.herokuapp.com/user/roles", {
+          .post("https://reservo-r.herokuapp.com/user/roles", {
             id: localStorage.getItem("user-info")
           })
           .then(response => (this.role = response.data));

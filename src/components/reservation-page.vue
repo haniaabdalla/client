@@ -57,7 +57,7 @@ export default {
   methods: {
     getHours() {
       axios
-        .post("https://resservo.herokuapp.com/hours/view", {
+        .post("https://reservo-r.herokuapp.com/hours/view", {
           id: this.$route.params.id
         })
         .then(response => {
@@ -70,7 +70,7 @@ export default {
     },
     getService() {
       axios
-        .post("https://resservo.herokuapp.com/services/service", {
+        .post("https://reservo-r.herokuapp.com/services/service", {
           id: this.$route.params.id
         })
         .then(response => {
@@ -83,7 +83,7 @@ export default {
     },
     AddReservation() {
       axios
-        .post("https://resservo.herokuapp.com/reservation/add_reservation", {
+        .post("https://reservo-r.herokuapp.com/reservation/add_reservation", {
           user_id: localStorage.getItem("user-info"),
           service_id: this.$route.params.id,
           from: this.form.from,

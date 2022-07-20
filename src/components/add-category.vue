@@ -35,14 +35,14 @@ export default {
   },
   methods: {
     async add_category() {
-      await axios.post("https://resservo.herokuapp.com/add_category", {
+      await axios.post("https://reservo-r.herokuapp.com/add_category", {
         name: this.form.name
       });
       this.$router.go()
     },
     get_categories() {
       axios
-        .get("https://resservo.herokuapp.com/categories")
+        .get("https://reservo-r.herokuapp.com/categories")
         .then(response => {
           this.categories = response.data;
         })
@@ -52,7 +52,7 @@ export default {
     },
     deletecategory(id){
         axios
-        .post("https://resservo.herokuapp.com/categories/delete",{
+        .post("https://reservo-r.herokuapp.com/categories/delete",{
           id: id
         })
         this.$router.go()

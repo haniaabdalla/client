@@ -58,7 +58,7 @@ export default {
     },
     gethistory() {
       axios
-        .post("https://resservo.herokuapp.com/reservation/view_history", {
+        .post("https://reservo-r.herokuapp.com/reservation/view_history", {
           id: localStorage.getItem("user-info")
         })
         .then(response => {
@@ -71,7 +71,7 @@ export default {
     },
     check(id) {
       axios
-        .post("https://resservo.herokuapp.com/rating/ViewUserRating", {
+        .post("https://reservo-r.herokuapp.com/rating/ViewUserRating", {
           user_id: localStorage.getItem("user-info"),
           service_id: id
         })

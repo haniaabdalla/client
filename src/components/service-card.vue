@@ -61,7 +61,7 @@ export default {
   methods: {
     getService() {
       axios
-        .post("https://resservo.herokuapp.com/services/service", {
+        .post("https://reservo-r.herokuapp.com/services/service", {
           id: this.$route.params.id
         })
         .then(response => {
@@ -74,7 +74,7 @@ export default {
     },
     getReviews() {
       axios
-        .post("https://resservo.herokuapp.com/rating/ViewRatingsAndReview", {
+        .post("https://reservo-r.herokuapp.com/rating/ViewRatingsAndReview", {
           ServiceID: this.$route.params.id
         })
         .then(response => {
@@ -91,7 +91,7 @@ export default {
       } else {
         console.log("hania");
         axios
-          .post("https://resservo.herokuapp.com/user/roles", {
+          .post("https://reservo-r.herokuapp.com/user/roles", {
             id: localStorage.getItem("user-info")
           })
           .then(response => (this.role = response.data));
@@ -100,7 +100,7 @@ export default {
     },
     addfav(id) {
       console.log(id);
-      let favservice = axios.post("https://resservo.herokuapp.com/fav/add_favorite", {
+      let favservice = axios.post("https://reservo-r.herokuapp.com/fav/add_favorite", {
         service_id: id,
         user_id: localStorage.getItem("user-info")
       });

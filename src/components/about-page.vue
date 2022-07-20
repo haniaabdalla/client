@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     getAdmins() {
-      axios.get("https://resservo.herokuapp.com/user/admins").then(response => {
+      axios.get("https://reservo-r.herokuapp.com/user/admins").then(response => {
         this.admins = response.data;
         console.log(response.data);
       });

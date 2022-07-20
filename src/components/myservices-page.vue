@@ -50,7 +50,7 @@ export default {
     },
     myservices() {
       axios
-        .post("https://resservo.herokuapp.com/services/view_my_services", {
+        .post("https://reservo-r.herokuapp.com/services/view_my_services", {
           id: localStorage.getItem("user-info")
         })
         .then(response => {

@@ -50,7 +50,7 @@ export default {
   methods: {
     login() {
       axios
-        .post("https://resservo.herokuapp.com/user/login", {
+        .post("https://reservo-r.herokuapp.com/user/login", {
           email: this.form.email,
           password: this.form.password
         })

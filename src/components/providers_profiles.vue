@@ -37,7 +37,7 @@ export default {
   methods: {
     getUsers() {
       axios
-        .get("https://resservo.herokuapp.com/user/allProviders")
+        .get("https://reservo-r.herokuapp.com/user/allProviders")
         .then(response => {
           this.users = response.data;
         })
@@ -48,7 +48,7 @@ export default {
     deleteuser(id) {
       console.log(id)
       axios
-        .post("https://resservo.herokuapp.com/user/delete_user", {
+        .post("https://reservo-r.herokuapp.com/user/delete_user", {
           id: id
         })
         .then(response => {

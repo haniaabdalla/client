@@ -66,7 +66,7 @@ export default {
       }
       else {
         await axios
-          .post("https://resservo.herokuapp.com/user/roles", {
+          .post("https://reservo-r.herokuapp.com/user/roles", {
             id: localStorage.getItem("user-info")
           })
           .then(response => (this.role = response.data)); console.log(this.role)

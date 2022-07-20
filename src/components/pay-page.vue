@@ -54,7 +54,7 @@ export default {
     },
     GetReservation() {
       axios
-        .post("https://resservo.herokuapp.com/reservation/view_reservation", {
+        .post("https://reservo-r.herokuapp.com/reservation/view_reservation", {
           id: this.$route.params.id
         })
         .then(response => {
@@ -67,7 +67,7 @@ export default {
     },
     getService() {
       axios
-        .post("https://resservo.herokuapp.com/services/service", {
+        .post("https://reservo-r.herokuapp.com/services/service", {
           id: this.reservation.service_id
         })
         .then(response => {
@@ -80,7 +80,7 @@ export default {
     },
     viewInfo() {
       axios
-        .post("https://resservo.herokuapp.com/user/info", {
+        .post("https://reservo-r.herokuapp.com/user/info", {
           id: this.service.user_id
         })
         .then(response => {
@@ -92,14 +92,14 @@ export default {
     },
     cancel() {
       axios
-        .post("https://resservo.herokuapp.com/reservation/delete_reservation", {
+        .post("https://reservo-r.herokuapp.com/reservation/delete_reservation", {
           id: this.$route.params.id
         })
       this.$router.push("/")
     },
     pay() {
       axios
-        .post("https://resservo.herokuapp.com/pay/pay", {
+        .post("https://reservo-r.herokuapp.com/pay/pay", {
           res_id: this.$route.params.id,
           type: this.type,
           total_price: this.reservation.total_price,

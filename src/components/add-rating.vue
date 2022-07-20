@@ -55,7 +55,7 @@ export default {
   methods: {
     rate() {
       axios
-        .post("https://resservo.herokuapp.com/rating/AddRatingAndReview", {
+        .post("https://reservo-r.herokuapp.com/rating/AddRatingAndReview", {
           rating: this.ratings,
           review: this.form.review,
           ServiceID: this.$route.params.id,
@@ -68,7 +68,7 @@ export default {
     },
     check() {
       axios
-        .post("https://resservo.herokuapp.com/rating/ViewUserRating", {
+        .post("https://reservo-r.herokuapp.com/rating/ViewUserRating", {
           user_id: localStorage.getItem("user-info"),
           service_id: this.$route.params.id
         })

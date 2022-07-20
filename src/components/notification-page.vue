@@ -39,7 +39,7 @@ export default {
   methods: {
     get_notifications() {
       axios
-        .post("https://resservo.herokuapp.com/notify/notify", {
+        .post("https://reservo-r.herokuapp.com/notify/notify", {
           user_id: localStorage.getItem("user-info")
         })
         .then(response => {
@@ -51,7 +51,7 @@ export default {
     },
     get_all() {
       axios
-        .get("https://resservo.herokuapp.com/notify/notifyall")
+        .get("https://reservo-r.herokuapp.com/notify/notifyall")
         .then(response => {
           this.all = response.data;
         })

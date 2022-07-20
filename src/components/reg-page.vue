@@ -103,7 +103,7 @@ export default {
         storage.ref("images").child(this.form.image).getDownloadURL().then((url) => {
           console.log("image url ", url);
           axios
-            .post("https://resservo.herokuapp.com/user/register", {
+            .post("https://reservo-r.herokuapp.com/user/register", {
               email: this.form.email,
               password: this.form.pswd,
               name: this.form.name,

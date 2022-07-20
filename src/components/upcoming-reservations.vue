@@ -46,7 +46,7 @@ export default {
   methods: {
     getUpcoming() {
       axios
-        .post("https://resservo.herokuapp.com/reservation/view_upcoming_reservation", {
+        .post("https://reservo-r.herokuapp.com/reservation/view_upcoming_reservation", {
           id: localStorage.getItem("user-info")
         })
         .then(response => {
@@ -59,7 +59,7 @@ export default {
     },
     cancel(id) {
       axios
-        .post("https://resservo.herokuapp.com/reservation/delete_reservation", {
+        .post("https://reservo-r.herokuapp.com/reservation/delete_reservation", {
           id: id
         })
         .catch(error => {

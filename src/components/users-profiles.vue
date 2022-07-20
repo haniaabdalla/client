@@ -40,7 +40,7 @@ export default {
   methods: {
     getUsers() {
       axios
-        .get("https://resservo.herokuapp.com/user/allCustomers")
+        .get("https://reservo-r.herokuapp.com/user/allCustomers")
         .then(response => {
           this.users = response.data;
         })
@@ -50,7 +50,7 @@ export default {
     },
     update(id) {
       axios
-        .post("https://resservo.herokuapp.com/user/update_loyalty", {
+        .post("https://reservo-r.herokuapp.com/user/update_loyalty", {
           customer_id: id
         }).then(response => {
           console.log(response.data);
@@ -59,7 +59,7 @@ export default {
     },
     remove(id) {
       axios
-        .post("https://resservo.herokuapp.com/user/remove_loyalty", {
+        .post("https://reservo-r.herokuapp.com/user/remove_loyalty", {
           customer_id: id
         }).then(response => {
           console.log(response.data);

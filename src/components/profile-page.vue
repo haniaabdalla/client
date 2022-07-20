@@ -46,7 +46,7 @@ export default {
   methods: {
     viewInfo() {
       axios
-        .post("https://resservo.herokuapp.com/user/info", {
+        .post("https://reservo-r.herokuapp.com/user/info", {
           id: localStorage.getItem("user-info")
         })
         .then(response => {
@@ -58,7 +58,7 @@ export default {
         });
     },
     EditName() {
-      axios.post("https://resservo.herokuapp.com/user/update_user", {
+      axios.post("https://reservo-r.herokuapp.com/user/update_user", {
         id: localStorage.getItem("user-info"),
         name: this.form.name
       });

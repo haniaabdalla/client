@@ -41,7 +41,7 @@ export default {
     },
     getFavorites() {
       axios
-        .post("https://resservo.herokuapp.com/fav/view_favorites", {
+        .post("https://reservo-r.herokuapp.com/fav/view_favorites", {
           id: localStorage.getItem("user-info")
         })
         .then(response => {
@@ -54,7 +54,7 @@ export default {
     },
     deletefav(id) {
       axios
-        .post("https://resservo.herokuapp.com/fav/deleteFavorite", {
+        .post("https://reservo-r.herokuapp.com/fav/deleteFavorite", {
           id: id
         })
         .catch(error => {
