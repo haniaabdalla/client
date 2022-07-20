@@ -114,7 +114,7 @@ export default {
                 description: this.form.description,
                 price: this.form.price,
                 address: this.form.address,
-                category: this.form.category,
+                category_name: this.form.category,
                 bank_number: this.form.bank_number,
                 user_id: localStorage.getItem("user-info")
               });
