@@ -5,7 +5,7 @@
   </div>
   <div v-else>
     <div>
-      <h2>Upcoming Reservations</h2>
+      <h2>Reservations</h2>
       <br />
 
       <table>
