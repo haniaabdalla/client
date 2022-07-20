@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     async add_category() {
-      await axios.post("https://reservo-r.herokuapp.com/add_category", {
+      await axios.post("https://reservo-r.herokuapp.com/categories/add_category", {
         name: this.form.name
       });
       this.$router.go()
