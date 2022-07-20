@@ -5,8 +5,9 @@
     <hr />
     <label for="day">
       <b>Day</b>
-    </label><br>
-    <select name="day" id="day" placeholder="Select the day" v-model="day">
+    </label>
+    <br />
+    <select name="day" id="day" placeholder="Select the day" v-model="form.day">
       <option disabled value>Please select the day</option>
       <option value="Saturday">Saturday</option>
       <option value="Sunday">Sunday</option>
@@ -16,16 +17,19 @@
       <option value="Thursday">Thursday</option>
       <option value="Friday">Friday</option>
     </select>
-    <br>
+    <br />
 
     <label for="from">
-      <b>From </b>
-    </label><br>
-    <input type="time" placeholder="from" name="from" id="from" v-model="from" /><br>
+      <b>From</b>
+    </label>
+    <br />
+    <input type="time" placeholder="from" name="from" id="from" v-model="form.from" />
+    <br />
     <label for="to">
-      <b> To </b>
-    </label><br>
-    <input type="time" placeholder="to" name="to" id="to" v-model="to" />
+      <b>To</b>
+    </label>
+    <br />
+    <input type="time" placeholder="to" name="to" id="to" v-model="form.to" />
 
     <hr />
     <button @click="submit()" class="registerbtn">Submit</button>
@@ -36,14 +40,17 @@
 import axios from "axios";
 export default {
   created() {
-    document.title = "Working Hours"
+    document.title = "Working Hours";
   },
-  props: ['id'],
+  props: ["id"],
   data() {
     return {
+      form:{
         day: "",
-        from: "",
-        to: "",
+      from: "",
+      to: "",
+      },
+      
       errors: []
     };
   },
@@ -55,7 +62,7 @@ export default {
         to: this.to,
         id: this.$route.params.id
       });
-      this.$router.push("/my_services")
+      this.$router.push("/my_services");
     }
   }
 };
