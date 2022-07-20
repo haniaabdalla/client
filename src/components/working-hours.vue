@@ -57,9 +57,9 @@ export default {
   methods: {
     submit() {
       axios.post("https://reservo-r.herokuapp.com/hours/add_hours", {
-        day: this.day,
-        from: this.from,
-        to: this.to,
+        day: this.form.day,
+        from: this.form.from,
+        to: this.form.to,
         id: this.$route.params.id
       });
       this.$router.push("/my_services");
